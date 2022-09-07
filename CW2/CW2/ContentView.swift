@@ -12,6 +12,9 @@ struct ContentView: View {
     
     var body: some View {
         VStack{
+          
+          Text("ما هو المسار المفضل لديك؟")
+            
           Image(myimage)
                 .resizable()
                 .scaledToFit()
