@@ -8,9 +8,27 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var cost = "0.0"
+    
     var body: some View {
-        Text("Hello, world!")
+        
+        VStack{
+            Text("محول العملات")
             .padding()
+            .font(.largeTitle)
+            
+            TextField("ادخل المبلغ", te: $cost)
+            
+            
+            
+            HStack{
+                
+                Image("USA")
+                
+                
+            }
+            
+        }
     }
 }
 
