@@ -8,26 +8,53 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var cost = "0.0"
+    @State var cost = ""
     
     var body: some View {
-        
+       
         VStack{
             Text("محول العملات")
-            .padding()
-            .font(.largeTitle)
+                .font(.largeTitle)
             
-            TextField("ادخل المبلغ", te: $cost)
+            TextField("ادخل المبلغ", text: $cost)
+                .multilineTextAlignment(.center)
+                .frame(width: 150, height: 30)
+                .padding(5)
             
+            Spacer()
+                .frame(height: 50)
             
-            
-            HStack{
+            ZStack{
                 
-                Image("USA")
                 
-                
+                HStack{
+                    Image("USA")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 30, height: 30)
+                    
+                    Text("$ \((Double(cost) ?? 0) * 3.28)")
+  
+                }
             }
             
+            HStack{
+                Image("UK")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 30, height: 30)
+                
+                Text("£ \((Double(cost) ?? 0) * 2.46)")
+            }
+            
+            HStack{
+                Image("europe")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 30, height: 30)
+                
+                Text("€ \((Double(cost) ?? 0) * 2.70)")
+            }
         }
     }
 }
